@@ -46,7 +46,7 @@ if ( ! defined( 'ABSPATH' ) ) {
       <tbody>
         <tr>
           <th scope="row">
-            <label for="<?php echo esc_attr( 'browser-tab-title-reminder' ); ?>-title-tag">Title on inactive tab</label>
+            <label for="<?php echo esc_attr( 'browser-tab-title-reminder' ); ?>-title-tag"><?php esc_html_e( 'Title on inactive tab', 'browser-tab-title-reminder' ); ?></label>
           </th>
           <td>
             <input class="regular-text input" type="text" id="<?php echo esc_attr( 'browser-tab-title-reminder' ); ?>-title-tag" name="<?php echo esc_attr( 'browser-tab-title-reminder' ); ?>[bttr_title]" value="<?php echo esc_attr( $title ); ?>" />
@@ -54,7 +54,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         </tr>
         <tr>
           <th scope="row">
-            <label for="<?php echo esc_attr( 'browser-tab-title-reminder' ); ?>-delay">Delay before showing new title</label>
+            <label for="<?php echo esc_attr( 'browser-tab-title-reminder' ); ?>-delay"><?php esc_html_e( 'Delay before showing new title', 'browser-tab-title-reminder' ); ?></label>
           </th>
           <td>
             <input class="regular-text input" type="number" id="<?php echo esc_attr( 'browser-tab-title-reminder' ); ?>-delay" name="<?php echo esc_attr( 'browser-tab-title-reminder' ); ?>[bttr_delay]" value="<?php echo esc_attr( $delay ); ?>" />
