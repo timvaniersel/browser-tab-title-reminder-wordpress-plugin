@@ -3,7 +3,7 @@
 /**
  * The public-facing functionality of the plugin.
  *
- * @link       https://websitescanner.io
+ * @link       https://plugin.nl
  * @since      1.0.0
  *
  * @package    Browser_Tab_Title_Reminder
@@ -18,18 +18,9 @@
  *
  * @package    Browser_Tab_Title_Reminder
  * @subpackage Browser_Tab_Title_Reminder/public
- * @author     Tim van Iersel <tim@websitescanner.io>
+ * @author     Tim van Iersel <tim@plugin.nl>
  */
 class Browser_Tab_Title_Reminder_Public {
-
-	/**
-	 * The ID of this plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $plugin_name    The ID of this plugin.
-	 */
-	private $plugin_name;
 
 	/**
 	 * The version of this plugin.
@@ -44,12 +35,10 @@ class Browser_Tab_Title_Reminder_Public {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of the plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
-	public function __construct( $plugin_name, $version ) {
+	public function __construct( $version ) {
 
-		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
 	}
@@ -61,7 +50,7 @@ class Browser_Tab_Title_Reminder_Public {
 	 */
 	public function enqueue_scripts() {
 		//Grab all options
-	  $options = get_option($this->plugin_name);
+	  $options = get_option('browser-tab-title-reminder');
 		if (!isset($options['bttr_delay'])){
       $delay = 3000;
     }else{
@@ -73,8 +62,8 @@ class Browser_Tab_Title_Reminder_Public {
 				'delay' => $delay,
 				'new_title' => $options['bttr_title'],
 			);
-			wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/browser-tab-title-reminder-public.js', array( 'jquery' ), $this->version, true );
-			wp_localize_script($this->plugin_name, 'browser_tab_title_params', $params);
+			wp_enqueue_script( 'browser-tab-title-reminder', plugin_dir_url( __FILE__ ) . 'js/browser-tab-title-reminder-public.js', array(), $this->version, true );
+			wp_localize_script('browser-tab-title-reminder', 'browser_tab_title_params', $params);
     }
 
 

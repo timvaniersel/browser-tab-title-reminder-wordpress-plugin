@@ -2,12 +2,12 @@
 Contributors: timvaniersel
 Tags: title, title tag, browser tab, reminder
 Requires at least: 3.0.1
-Tested up to: 5.1
+Tested up to: 6.9
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: trunk
 Requires PHP: 5.2.4
-Donate link: https://websitescanner.io/
+Donate link: https://www.buymeacoffee.com/tim
 
 
 Change the browser tab Title when the tab is not active as a reminder or to get the attention back from the user.
@@ -44,6 +44,14 @@ From what we tested it is.
 2. Title in browser
 
 == Changelog ==
+
+= 1.0.2 =
+* Remove jQuery dependency
+* Improve security
+
+= 1.0.1 =
+* Add dutch translations
+* Update author info
 
 = 1.0 =
 * Initial release
