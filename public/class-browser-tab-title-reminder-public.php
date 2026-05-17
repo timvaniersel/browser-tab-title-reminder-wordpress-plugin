@@ -23,15 +23,6 @@
 class Browser_Tab_Title_Reminder_Public {
 
 	/**
-	 * The ID of this plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $plugin_name    The ID of this plugin.
-	 */
-	private $plugin_name;
-
-	/**
 	 * The version of this plugin.
 	 *
 	 * @since    1.0.0
@@ -49,7 +40,6 @@ class Browser_Tab_Title_Reminder_Public {
 	 */
 	public function __construct( $plugin_name, $version ) {
 
-		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
 	}
@@ -61,7 +51,7 @@ class Browser_Tab_Title_Reminder_Public {
 	 */
 	public function enqueue_scripts() {
 		//Grab all options
-	  $options = get_option($this->plugin_name);
+	  $options = get_option('browser-tab-title-reminder');
 		if (!isset($options['bttr_delay'])){
       $delay = 3000;
     }else{
@@ -73,8 +63,8 @@ class Browser_Tab_Title_Reminder_Public {
 				'delay' => $delay,
 				'new_title' => $options['bttr_title'],
 			);
-			wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/browser-tab-title-reminder-public.js', array( 'jquery' ), $this->version, true );
-			wp_localize_script($this->plugin_name, 'browser_tab_title_params', $params);
+			wp_enqueue_script( 'browser-tab-title-reminder', plugin_dir_url( __FILE__ ) . 'js/browser-tab-title-reminder-public.js', array( 'jquery' ), $this->version, true );
+			wp_localize_script('browser-tab-title-reminder', 'browser_tab_title_params', $params);
     }
 
 

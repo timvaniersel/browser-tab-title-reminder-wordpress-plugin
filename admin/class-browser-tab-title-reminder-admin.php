@@ -23,15 +23,6 @@
 class Browser_Tab_Title_Reminder_Admin {
 
 	/**
-	* The ID of this plugin.
-	*
-	* @since    1.0.0
-	* @access   private
-	* @var      string    $plugin_name    The ID of this plugin.
-	*/
-	private $plugin_name;
-
-	/**
 	* The version of this plugin.
 	*
 	* @since    1.0.0
@@ -49,7 +40,6 @@ class Browser_Tab_Title_Reminder_Admin {
 	*/
 	public function __construct( $plugin_name, $version ) {
 
-		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
 	}
@@ -76,7 +66,7 @@ class Browser_Tab_Title_Reminder_Admin {
 
 	public function add_plugin_admin_menu() {
 
-		add_options_page( 'Change the browser tab title on inactive tab', 'Browser tab title', 'manage_options', $this->plugin_name, array($this, 'display_plugin_setup_page')
+		add_options_page( 'Change the browser tab title on inactive tab', 'Browser tab title', 'manage_options', 'browser-tab-title-reminder', array($this, 'display_plugin_setup_page')
 	);
 }
 
@@ -91,7 +81,7 @@ public function add_action_links( $links ) {
 	*  Documentation : https://codex.wordpress.org/Plugin_API/Filter_Reference/plugin_action_links_(plugin_file_name)
 	*/
 	$settings_link = array(
-		'<a href="' . admin_url( 'options-general.php?page=' . $this->plugin_name ) . '">' . __('Settings', $this->plugin_name) . '</a>',
+		'<a href="' . esc_url( admin_url( 'options-general.php?page=browser-tab-title-reminder' ) ) . '">' . esc_html__( 'Settings', 'browser-tab-title-reminder' ) . '</a>',
 	);
 	return array_merge(  $settings_link, $links );
 
@@ -99,7 +89,7 @@ public function add_action_links( $links ) {
 
 
 public function options_update() {
-	register_setting($this->plugin_name, $this->plugin_name, array($this, 'validate'));
+	register_setting('browser-tab-title-reminder', 'browser-tab-title-reminder', array($this, 'validate'));
 }
 
 

@@ -2,8 +2,8 @@
 Contributors: timvaniersel
 Tags: title, title tag, browser tab, reminder
 Requires at least: 3.0.1
-Tested up to: 5.4
-Stable tag: trunk
+Tested up to: 6.9
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires PHP: 5.2.4
@@ -44,6 +44,10 @@ From what we tested it is.
 2. Title in browser
 
 == Changelog ==
+
+= 1.0.2 =
+* Remove jQuery dependancy
+* improve security
 
 = 1.0.1 =
 * Add dutch translations

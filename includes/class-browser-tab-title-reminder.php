@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The file that defines the core plugin class
  *
@@ -40,15 +44,6 @@ class Browser_Tab_Title_Reminder {
 	protected $loader;
 
 	/**
-	 * The unique identifier of this plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   protected
-	 * @var      string    $plugin_name    The string used to uniquely identify this plugin.
-	 */
-	protected $plugin_name;
-
-	/**
 	 * The current version of the plugin.
 	 *
 	 * @since    1.0.0
@@ -61,7 +56,7 @@ class Browser_Tab_Title_Reminder {
 	 * Define the core functionality of the plugin.
 	 *
 	 * Set the plugin name and the plugin version that can be used throughout the plugin.
-	 * Load the dependencies, define the locale, and set the hooks for the admin area and
+	 * Load the dependencies and set the hooks for the admin area and
 	 * the public-facing side of the site.
 	 *
 	 * @since    1.0.0
@@ -72,10 +67,8 @@ class Browser_Tab_Title_Reminder {
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->plugin_name = 'browser-tab-title-reminder';
 
 		$this->load_dependencies();
-		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
 
@@ -87,7 +80,6 @@ class Browser_Tab_Title_Reminder {
 	 * Include the following files that make up the plugin:
 	 *
 	 * - Browser_Tab_Title_Reminder_Loader. Orchestrates the hooks of the plugin.
-	 * - Browser_Tab_Title_Reminder_i18n. Defines internationalization functionality.
 	 * - Browser_Tab_Title_Reminder_Admin. Defines all hooks for the admin area.
 	 * - Browser_Tab_Title_Reminder_Public. Defines all hooks for the public side of the site.
 	 *
@@ -106,12 +98,6 @@ class Browser_Tab_Title_Reminder {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-browser-tab-title-reminder-loader.php';
 
 		/**
-		 * The class responsible for defining internationalization functionality
-		 * of the plugin.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-browser-tab-title-reminder-i18n.php';
-
-		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-browser-tab-title-reminder-admin.php';
@@ -123,23 +109,6 @@ class Browser_Tab_Title_Reminder {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-browser-tab-title-reminder-public.php';
 
 		$this->loader = new Browser_Tab_Title_Reminder_Loader();
-
-	}
-
-	/**
-	 * Define the locale for this plugin for internationalization.
-	 *
-	 * Uses the Browser_Tab_Title_Reminder_i18n class in order to set the domain and to register the hook
-	 * with WordPress.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 */
-	private function set_locale() {
-
-		$plugin_i18n = new Browser_Tab_Title_Reminder_i18n();
-
-		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
 	}
 
@@ -158,7 +127,7 @@ class Browser_Tab_Title_Reminder {
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_plugin_admin_menu' );
 
 		// Add Settings link to the plugin
-		$plugin_basename = plugin_basename( plugin_dir_path( __DIR__ ) . $this->plugin_name . '.php' );
+		$plugin_basename = plugin_basename( plugin_dir_path( __DIR__ ) . 'change-browser-tab-title-when-tab-is-not-active.php' );
 		$this->loader->add_filter( 'plugin_action_links_' . $plugin_basename, $plugin_admin, 'add_action_links' );
 
 		// Save/Update our plugin options
@@ -197,7 +166,7 @@ class Browser_Tab_Title_Reminder {
 	 * @return    string    The name of the plugin.
 	 */
 	public function get_plugin_name() {
-		return $this->plugin_name;
+		return 'browser-tab-title-reminder';
 	}
 
 	/**

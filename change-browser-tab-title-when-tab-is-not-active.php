@@ -16,7 +16,7 @@
  * Plugin Name:       Change browser tab title when tab is not active
  * Plugin URI:        https://plugin.nl/browser-tab-title-reminder/
  * Description:       With this plugin you can change the title tag in a tab when a user is in another tab / not active.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Author:            Tim van Iersel, Plugin.nl
  * Author URI:        https://plugin.nl
  * License:           GPL-2.0+
@@ -35,7 +35,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'BROWSER_TAB_TITLE_REMINDER_VERSION', '1.0.1' );
+define( 'BROWSER_TAB_TITLE_REMINDER_VERSION', '1.0.2' );
 
 /**
  * The code that runs during plugin activation.
