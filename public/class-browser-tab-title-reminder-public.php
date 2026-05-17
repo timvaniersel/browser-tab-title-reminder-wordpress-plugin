@@ -62,7 +62,7 @@ class Browser_Tab_Title_Reminder_Public {
 				'delay' => $delay,
 				'new_title' => $options['bttr_title'],
 			);
-			wp_enqueue_script( 'browser-tab-title-reminder', plugin_dir_url( __FILE__ ) . 'js/browser-tab-title-reminder-public.js', array( 'jquery' ), $this->version, true );
+			wp_enqueue_script( 'browser-tab-title-reminder', plugin_dir_url( __FILE__ ) . 'js/browser-tab-title-reminder-public.js', array(), $this->version, true );
 			wp_localize_script('browser-tab-title-reminder', 'browser_tab_title_params', $params);
     }
 

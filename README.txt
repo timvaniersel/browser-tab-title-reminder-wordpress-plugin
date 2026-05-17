@@ -46,8 +46,8 @@ From what we tested it is.
 == Changelog ==
 
 = 1.0.2 =
-* Remove jQuery dependancy
-* improve security
+* Remove jQuery dependency
+* Improve security
 
 = 1.0.1 =
 * Add dutch translations

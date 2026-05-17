@@ -27,18 +27,25 @@ Yes, using emoji is a great way to get the users attention.
 From what we tested it is.
 
 ## What if I'm not using WordPress?
-Load in jQuery first and use the following code:
-`
-$(function() {
-		var pageTitle = $("title").text();
-		$(window).blur(function() {
-				$("title").delay(3000).queue(function() {
-					$("title").text("Don't forget us 🙂");
-					$(this).clearQueue();
-				});
-		});
-		$(window).focus(function() {
-			$("title").text(pageTitle);
-		});
-	});
-`
+Use the following code:
+
+```js
+(function() {
+	'use strict';
+
+	var pageTitle = document.title;
+	var titleTimeout;
+
+	window.addEventListener( 'blur', function() {
+		window.clearTimeout( titleTimeout );
+		titleTimeout = window.setTimeout( function() {
+			document.title = "Don't forget us :)";
+		}, 3000 );
+	} );
+
+	window.addEventListener( 'focus', function() {
+		window.clearTimeout( titleTimeout );
+		document.title = pageTitle;
+	} );
+}());
+```
