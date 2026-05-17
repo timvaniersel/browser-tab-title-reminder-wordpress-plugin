@@ -35,16 +35,13 @@ class Browser_Tab_Title_Reminder_Admin {
 	* Initialize the class and set its properties.
 	*
 	* @since    1.0.0
-	* @param      string    $plugin_name       The name of this plugin.
 	* @param      string    $version    The version of this plugin.
 	*/
-	public function __construct( $plugin_name, $version ) {
+	public function __construct( $version ) {
 
 		$this->version = $version;
 
 	}
-
-
 
 
 	/**
@@ -93,18 +90,15 @@ public function options_update() {
 }
 
 
-public function validate($input) {
-	// Validate
+public function validate( array $input ) {
+
+
 	$valid = array();
 	if(isset($input['bttr_delay'])){
 		$valid['bttr_delay'] = intval($input['bttr_delay']);
 	}
-	// else{
-	// 	return false;
-	// }
-	// if(isset($input['bttr_title'])){
-		$valid['bttr_title'] = sanitize_text_field($input['bttr_title']);
-	//}
+
+	$valid['bttr_title'] = sanitize_text_field($input['bttr_title']);
 
 	return $valid;
 }
