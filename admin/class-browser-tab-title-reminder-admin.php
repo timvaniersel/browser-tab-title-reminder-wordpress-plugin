@@ -3,7 +3,7 @@
 /**
 * The admin-specific functionality of the plugin.
 *
-* @link       https://websitescanner.io
+* @link       https://plugin.nl
 * @since      1.0.0
 *
 * @package    Browser_Tab_Title_Reminder
@@ -18,7 +18,7 @@
 *
 * @package    Browser_Tab_Title_Reminder
 * @subpackage Browser_Tab_Title_Reminder/admin
-* @author     Tim van Iersel <tim@websitescanner.io>
+* @author     Tim van Iersel <tim@plugin.nl>
 */
 class Browser_Tab_Title_Reminder_Admin {
 

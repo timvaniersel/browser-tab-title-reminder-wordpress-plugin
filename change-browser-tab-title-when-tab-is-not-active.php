@@ -8,17 +8,17 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              https://websitescanner.io
+ * @link              https://plugin.nl
  * @since             1.0.0
  * @package           Browser_Tab_Title_Reminder
  *
  * @wordpress-plugin
  * Plugin Name:       Change browser tab title when tab is not active
- * Plugin URI:        https://websitescanner.io/plugins/browser-tab-title-reminder
+ * Plugin URI:        https://plugin.nl/browser-tab-title-reminder/
  * Description:       With this plugin you can change the title tag in a tab when a user is in another tab / not active.
- * Version:           1.0.0
- * Author:            Tim van Iersel
- * Author URI:        https://websitescanner.io
+ * Version:           1.0.1
+ * Author:            Tim van Iersel, Plugin.nl
+ * Author URI:        https://plugin.nl
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       browser-tab-title-reminder
@@ -35,7 +35,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'BROWSER_TAB_TITLE_REMINDER_VERSION', '1.0.0' );
+define( 'BROWSER_TAB_TITLE_REMINDER_VERSION', '1.0.1' );
 
 /**
  * The code that runs during plugin activation.

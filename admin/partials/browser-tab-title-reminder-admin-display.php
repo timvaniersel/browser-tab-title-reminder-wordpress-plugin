@@ -5,7 +5,7 @@
 *
 * This file is used to markup the admin-facing aspects of the plugin.
 *
-* @link       https://websitescanner.io
+* @link       https://plugin.nl
 * @since      1.0.0
 *
 * @package    Browser_Tab_Title_Reminder
