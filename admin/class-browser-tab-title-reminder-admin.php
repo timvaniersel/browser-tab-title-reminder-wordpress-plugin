@@ -63,7 +63,7 @@ class Browser_Tab_Title_Reminder_Admin {
 
 	public function add_plugin_admin_menu() {
 
-		add_options_page( 'Change the browser tab title on inactive tab', 'Browser tab title', 'manage_options', 'browser-tab-title-reminder', array($this, 'display_plugin_setup_page')
+		add_options_page( __( 'Change the browser tab title on inactive tab', 'browser-tab-title-reminder' ), __( 'Browser tab title', 'browser-tab-title-reminder' ), 'manage_options', 'browser-tab-title-reminder', array($this, 'display_plugin_setup_page')
 	);
 }
 
