@@ -98,7 +98,7 @@ public function validate( array $input ) {
 		$valid['bttr_delay'] = intval($input['bttr_delay']);
 	}
 
-	$valid['bttr_title'] = sanitize_text_field($input['bttr_title']);
+	$valid['bttr_title'] = isset( $input['bttr_title'] ) ? sanitize_text_field( $input['bttr_title'] ) : '';
 
 	return $valid;
 }
